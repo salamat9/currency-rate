@@ -17,8 +17,9 @@ export default {
 				quote: code,
 				baseValue: formatPrice(nominal / value),
 				basePrevious: formatPrice(nominal / previous),
-				quoteValue: value / nominal,
+				quoteValue: formatPrice(value / nominal),
 				quotePrevious: formatPrice(previous / nominal),
+				coefficient: 1 / (value / nominal),
 			};
 		}
 

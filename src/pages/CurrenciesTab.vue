@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onBeforeMount, computed } from 'vue';
-import { formatPrice } from '../assets/utils/format.js';
 import CurrencyService from '../services/CurrencyService.js';
 
 const search = ref(null);
@@ -54,7 +53,7 @@ const indication = (previous, value) => {
 			<tr v-for="currency in filteredCurrencies" :key="currency.ID">
 				<template v-if="currency.flag">
 					<td>{{ currency.quote }} / {{ currency.base }}</td>
-					<td>{{ formatPrice(currency.quoteValue) }} {{ currency.base }}</td>
+					<td>{{ currency.quoteValue }} {{ currency.base }}</td>
 					<td>
 						<img
 							v-if="indication(currency.quotePrevious, currency.quoteValue)"
